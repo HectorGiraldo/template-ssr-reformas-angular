@@ -1,3 +1,98 @@
+<!-- Hero Section -->
 <section>
-  <div class="backgroung-home min-h-[78vh]"></div>
+  <div class="backgroung-home min-h-[78vh] flex items-center justify-center">
+    <div
+      class="container mx-auto flex flex-col justify-center items-center h-full"
+    >
+      <div>
+        <p class="text-white text-4xl font-light">Empieza ya tu reforma</p>
+        <h1 class="text-7xl text text-white font-light">Reformas en Madrid</h1>
+        <p class="text-white text-sm py-4">
+          Somos el mejor equipo de técnicos y oficiales de obra que trabajamos
+          para que tu reforma salga perfecta.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="py-12">
+  <div class="container mx-auto text-center">
+    <h2 class="text-sm text-red-700 font-light pb-2">
+      Líderes en nuestro sector
+    </h2>
+    <h3 class="text-4xl font-light">
+      Reformas, interiorismo y decoración en Madrid
+    </h3>
+    <div class="grid md:grid-cols-3 gap-8 mt-6">
+      <div *ngFor="let item of items" class="bg-white shadow-lg">
+        <img [src]="'/assets/img/reforma-de-bano.jpg'" alt="" />
+        <div class="py-8">
+          <p>
+            <span class="text-base text-red-700 font-light">Reformas</span>
+            <span class="text-xl font-light"> Integrales</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galería -->
+<section id="galeria" class="py-12 bg-gray-200">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold">Galería de Proyectos</h2>
+    <div class="grid md:grid-cols-3 gap-4 mt-6">
+      <img
+        src="https://source.unsplash.com/400x300/?architecture"
+        class="rounded-lg shadow"
+      />
+      <img
+        src="https://source.unsplash.com/400x300/?building"
+        class="rounded-lg shadow"
+      />
+      <img
+        src="https://source.unsplash.com/400x300/?interior"
+        class="rounded-lg shadow"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Testimonios -->
+<section id="testimonios" class="py-12">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold">Lo que dicen nuestros clientes</h2>
+    <div class="mt-6">
+      <p class="text-lg italic">
+        "Excelente servicio, atención y calidad en el trabajo realizado."
+      </p>
+      <p class="mt-2 font-semibold">- Juan Pérez</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="py-12 bg-gray-200">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold">Contáctanos</h2>
+    <form class="mt-6 max-w-md mx-auto bg-white p-6 rounded-lg shadow">
+      <input
+        type="text"
+        placeholder="Nombre"
+        class="w-full p-2 border rounded mb-4"
+      />
+      <input
+        type="email"
+        placeholder="Correo Electrónico"
+        class="w-full p-2 border rounded mb-4"
+      />
+      <textarea
+        placeholder="Mensaje"
+        class="w-full p-2 border rounded mb-4"
+      ></textarea>
+      <button class="bg-blue-900 text-white px-4 py-2 rounded">Enviar</button>
+    </form>
+  </div>
 </section>
