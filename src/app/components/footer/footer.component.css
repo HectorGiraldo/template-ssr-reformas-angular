@@ -1,0 +1,19 @@
+@media (min-width: 768px) {
+  .legalColumn {
+    padding-left: 40px;
+    border-right: none;
+    border-left: 1px solid #dfe0e0;
+  }
+}
+
+.cap-footer {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+}
+
+.text-footer {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+}
