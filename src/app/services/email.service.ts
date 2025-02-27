@@ -10,6 +10,8 @@ export class EmailService {
   constructor(private http: HttpClient) {}
 
   sendEmail(data: any) {
+    console.log('data', data);
+
     return this.http.post(this.apiUrl, data);
   }
 }
