@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { EmailService } from '../../services/email.service';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  email = Inject(EmailService);
   items = [1, 2, 3, 4, 5, 6];
+
+  sendEmail() {
+    this.email
+      .sendEmail({ message: 'Hello World correo funciona' })
+      .subscribe();
+  }
 }
