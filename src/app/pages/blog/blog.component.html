@@ -1,3 +1,44 @@
+<!-- Hero Section -->
 <section>
-  <div class="backgroung-blog min-h-[78vh]"></div>
+  <div class="backgroung-blog min-h-[78vh] flex items-center justify-center">
+    <div
+      class="container mx-auto flex flex-col justify-center items-center h-full"
+    >
+      <div>
+        <h1 class="text-7xl text text-white font-light">
+          Transforma tu Espacio
+        </h1>
+        <p class="text-white text-sm py-4">
+          Consejos, Ideas y Tendencias en Reformas para un Hogar Renovado
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="py-12">
+  <div class="container mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mt-6">
+      <div *ngFor="let item of items" class="bg-white shadow-lg">
+        <img [src]="'/assets/img/reforma-de-bano.jpg'" alt="" />
+        <div class="p-8">
+          <h2 class="text-xl font-medium text-[#0092ca]">
+            Demoliciones precisas en reformas de viviendas: claves para no tener
+            complicaciones
+          </h2>
+          <p><small class="text-gray-400 py-2">Sep 17, 2024</small></p>
+          <p class="pb-4">
+            <span class="text-xl font-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Doloremque eum perspiciatis, in voluptate nam deserunt aliquid
+              iure magni quis modi fugit vitae ullam dicta itaque, provident, id
+              mollitia harum excepturi!</span
+            >
+          </p>
+          <a href="/" class="text-[#0092ca]">leer más...</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
