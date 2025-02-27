@@ -1,5 +1,9 @@
 .active {
-  font-weight: bold;
-  color: black !important;
-  text-decoration: underline;
+  font-weight: 600;
+  color: #0092ca;
 }
+
+a{
+  font-weight: 300;
+}
+

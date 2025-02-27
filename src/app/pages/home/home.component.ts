@@ -15,7 +15,7 @@ export class HomeComponent {
   sendEmail() {
     this.email
       .sendEmail({
-        name: 'hecrtor',
+        name: 'hector',
         email: 'boykan30@gmail.com',
         message: 'Hello World correo funciona',
       })
