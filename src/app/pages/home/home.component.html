@@ -5,11 +5,10 @@
       class="container mx-auto flex flex-col justify-center items-center h-full px-6"
     >
       <div>
-        <p class="text-white text-4xl font-light">Empieza ya tu reforma</p>
-        <h1 class="text-7xl text text-white font-light">Reformas en Madrid</h1>
+        <p class="text-white text-4xl font-medium">Empieza ya tu reforma</p>
+        <h1 class="text-7xl text text-white font-medium">Reformas en Madrid</h1>
         <p class="text-white text-sm py-4">
-          Somos el mejor equipo de técnicos y oficiales de obra que trabajamos
-          para que tu reforma salga perfecta.
+          Transformamos espacios con calidad, precio y compromiso.
         </p>
       </div>
     </div>
@@ -19,19 +18,22 @@
 <!-- Servicios -->
 <section id="servicios" class="py-12">
   <div class="container mx-auto text-center px-6">
-    <h2 class="text-sm text-[#0092ca] font-light pb-2">
+    <h2 class="text-xl text-[#0092ca] font-medium pb-2">
       Líderes en nuestro sector
     </h2>
-    <h3 class="text-4xl font-light">
+    <h3 class="text-4xl font-medium">
       Reformas, interiorismo y decoración en Madrid
     </h3>
     <div class="grid md:grid-cols-3 gap-8 mt-6">
       <div *ngFor="let item of items" class="bg-white shadow-lg">
-        <img [src]="'/assets/img/reforma-de-bano.jpg'" alt="" />
+        <img [src]="item.img" alt="" class="h-80" />
         <div class="py-8">
           <p>
-            <span class="text-base text-[#0092ca] font-light">Reformas</span>
-            <span class="text-xl font-light"> Integrales</span>
+            <span class="text-3xl text-[#0092ca] font-medium">Reformas</span>
+            <span class="text-3xl font-medium"> {{ item.titulo }}</span>
+          </p>
+          <p class="font-medium text-lg px-8 py-4 text-justify text-gray-700">
+            {{ item.descripcion }}
           </p>
         </div>
       </div>
@@ -50,19 +52,20 @@
         <p class="mt-4 text-lg">
           Siendo una de las empresas
           <strong>líderes en reformas en Madrid</strong>, Hecmar Reformas cuenta
-          con más de 15 años en el mercado y un equipo de profesionales con una
+          con más de 5 años en el mercado y un equipo de profesionales con una
           dilatada experiencia en reformas para espacios diversos.
         </p>
-        <a
-          href="/contacto/"
+        <button
+          [routerLink]="['/contacto']"
           class="mt-6 inline-block bg-[#0092ca] text-white px-6 py-3"
-          >Contáctanos</a
         >
+          Contáctanos
+        </button>
       </div>
       <!-- Imagen -->
       <div>
         <img
-          [src]="'/assets/img/reforma-de-bano.jpg'"
+          [src]="'/assets/img/lideres.jpg'"
           alt="Reforma de Oficina"
           class="shadow-lg"
         />
@@ -72,10 +75,10 @@
 </section>
 
 <!-- Sección Transformamos los Espacios -->
-<section class="bg-white py-12 text-center">
+<section class="bg-white pt-12 pb-4 text-center">
   <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold">Mejoramos la vida de las personas</h2>
-    <p class="text-lg mt-2 text-gray-700">Transformamos los espacios</p>
+    <p class="text-xl mt-2 text-[#0092ca]">Mejoramos la vida de las personas</p>
+    <h2 class="text-4xl font-medium">Transformamos los espacios</h2>
   </div>
 </section>
 
@@ -83,15 +86,15 @@
   <!-- Interiorismo -->
   <div class="bg-[#0092ca]">
     <img
-      [src]="'/assets/img/reforma-de-bano.jpg'"
+      [src]="'/assets/img/interiorismo.jpg'"
       alt="Reforma de cocina moderna"
       class="shadow-lg mx-auto h-[700px]"
     />
     <div class="px-10 py-20">
-      <h3 class="text-white text-3xl font-light my-5">Interiorismo</h3>
+      <h3 class="text-white text-3xl font-medium my-5">Interiorismo</h3>
       <p class="text-white text-lg">
-        Interiorismo gratis. Te enseñamos cómo va a quedar tu reforma antes de
-        empezar.
+        Te asesoramos sin coste para visualizar el resultado final antes de
+        comenzar tu reforma.
       </p>
     </div>
   </div>
@@ -99,17 +102,15 @@
   <!-- El Método -->
   <div class="bg-gray-300">
     <div class="px-10 py-20">
-      <h3 class="text-3xl font-light my-5">El Método</h3>
+      <h3 class="text-3xl font-medium my-5">El Método</h3>
       <p class="text-lg">
-        Para llegar al máximo de satisfacción de nuestros clientes,
-        <strong
-          >seguimos una metodología que asegura el éxito de la reforma</strong
-        >.
+        Seguimos un método eficiente para garantizar calidad, cumplimiento y
+        satisfacción en cada proyecto.
       </p>
     </div>
 
     <img
-      [src]="'/assets/img/reforma-de-bano.jpg'"
+      [src]="'/assets/img/metodo.jpg'"
       alt="Comedor industrial"
       class="shadow-lg mx-auto mt-4 h-[700px]"
     />
@@ -118,36 +119,36 @@
   <!-- Reformas -->
   <div class="shadow-lg">
     <img
-      [src]="'/assets/img/reforma-de-bano.jpg'"
+      [src]="'/assets/img/casa.jpg'"
       alt="Reforma integral vivienda"
       class="shadow-lg mx-auto h-[700px]"
     />
     <div class="px-10 py-20">
-      <h3 class="text-[#0092ca] text-3xl font-light my-5">Reformas</h3>
+      <h3 class="text-[#0092ca] text-3xl font-medium my-5">Reformas</h3>
       <p class="text-gray-700 text-lg">
-        Estamos especializados en hacer reformas integrales de
-        <strong>viviendas, locales y oficinas</strong>.
+        Somos especialistas en la renovación de viviendas, locales y oficinas,
+        cuidando cada detalle.
       </p>
     </div>
   </div>
 </section>
 
 <section class="container mx-auto px-6 text-center py-12 bg-gray-100">
-  <h2 class="text-3xl font-bold text-gray-800">Calidad en cada proyecto</h2>
-  <p class="text-lg text-gray-600">La calidad es nuestra firma</p>
+  <p class="text-xl text-[#0092ca]">Calidad en cada proyecto</p>
+  <h2 class="text-4xl font-medium">La calidad es nuestra firma</h2>
 
   <div class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
     <!-- Diseño de espacios -->
     <div class="text-center">
       <img
-        class="mx-auto shadow-lg h-52 w-52 rounded-full"
-        [src]="'/assets/img/reforma-de-bano.jpg'"
+        class="mx-auto shadow-lg h-28 w-28 rounded-full"
+        [src]="'/assets/img/bano-1.jpg'"
         alt="Diseño de espacios"
       />
       <div class="px-20">
         <p class="mt-4">
-          <span class="text-3xl font-light text-[#0092ca]">Diseño</span>
-          <span class="text-3xl font-light"> de espacios</span>
+          <span class="text-3xl font-medium text-[#0092ca]">Diseño</span>
+          <span class="text-3xl font-medium"> de espacios</span>
         </p>
 
         <p class="text-gray-700">
@@ -160,14 +161,14 @@
     <!-- Materiales de calidad -->
     <div class="text-center">
       <img
-        class="mx-auto h-52 w-52 rounded-full shadow-lg"
-        [src]="'/assets/img/reforma-de-bano.jpg'"
+        class="mx-auto h-28 w-28 rounded-full shadow-lg"
+        [src]="'/assets/img/materiales.jpg'"
         alt="Materiales de calidad"
       />
       <div class="px-20">
         <p class="mt-4">
-          <span class="text-3xl font-light text-[#0092ca]">Materiales</span>
-          <span class="text-3xl font-light"> de calidad</span>
+          <span class="text-3xl font-medium text-[#0092ca]">Materiales</span>
+          <span class="text-3xl font-medium"> de calidad</span>
         </p>
         <p class="text-gray-700">
           Contamos con un amplio repertorio de proveedores nacionales e
@@ -179,14 +180,14 @@
     <!-- Versatilidad y cercanía -->
     <div class="text-center">
       <img
-        class="mx-auto h-52 w-52 rounded-full shadow-lg"
-        [src]="'/assets/img/reforma-de-bano.jpg'"
+        class="mx-auto h-28 w-28 rounded-full shadow-lg"
+        [src]="'/assets/img/obra.jpg'"
         alt="Versatilidad y cercanía"
       />
       <div class="px-20">
         <p class="mt-4">
-          <span class="text-3xl font-light text-[#0092ca]">Versatilidad</span>
-          <span class="text-3xl font-light"> y cercanía</span>
+          <span class="text-3xl font-medium text-[#0092ca]">Versatilidad</span>
+          <span class="text-3xl font-medium"> y cercanía</span>
         </p>
         <p class="text-gray-700">
           Nos adaptamos a tu presupuesto y estilo para reflejar tu personalidad
@@ -200,18 +201,18 @@
     class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-1 px-20"
   >
     <img
-      class="shadow-md"
-      [src]="'/assets/img/reforma-de-bano.jpg'"
+      class="shadow-md h-72"
+      [src]="'/assets/img/local-2.jpg'"
       alt="Proyecto Embajadores"
     />
     <img
-      class="shadow-md"
-      [src]="'/assets/img/reforma-de-bano.jpg'"
+      class="shadow-md h-72"
+      [src]="'/assets/img/salon.jpg'"
       alt="Proyecto Manchester"
     />
     <img
-      class="shadow-md"
-      [src]="'/assets/img/reforma-de-bano.jpg'"
+      class="shadow-md h-72"
+      [src]="'/assets/img/oficina-2.jpg'"
       alt="Proyecto Moralzarzal"
     />
   </div>
@@ -246,7 +247,7 @@
       <p class="text-lg italic">
         "Excelente servicio, atención y calidad en el trabajo realizado."
       </p>
-      <p class="mt-2 font-light">- Juan Pérez</p>
+      <p class="mt-2 font-medium">- Juan Pérez</p>
     </div>
   </div>
 </section> -->
