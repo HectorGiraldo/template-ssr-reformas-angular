@@ -21,15 +21,6 @@
 
 <section class="bg-gray-100 py-16">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <!-- Imagen principal -->
-    <div class="flex justify-center">
-      <img
-        class="w-full max-w-5xl shadow-lg"
-        src="https://altonivelreformas.es/wp-content/uploads/2023/09/servicios-reformas-integrales-transformed.png"
-        alt="Servicios de reformas integrales"
-      />
-    </div>
-
     <!-- Contenido de la sección -->
     <div class="mt-12 text-center">
       <h2 class="text-3xl md:text-4xl font-light text-gray-900">
@@ -62,13 +53,13 @@
 
     <!-- Botón de acción -->
     <div class="mt-8 flex justify-center">
-      <a
-        href="/presupuesto/"
+      <button
+        [routerLink]="['/presupuesto']"
         class="px-6 py-3 bg-[#0092ca] text-white text-lg font-semibold shadow-md transition-all"
         rel="nofollow"
       >
         Pídenos presupuesto
-      </a>
+      </button>
     </div>
   </div>
 </section>

@@ -7,7 +7,7 @@
     <p class="cap-footer mb-4">Contacto</p>
     <p class="text-footer mb-0">Hecmar Reformas S.L.</p>
     <p class="text-footer mb-4">
-      <a target="_blank" href="/"> www.hecmar.com</a>
+      <a target="_blank" [routerLink]="['/']"> www.hecmar.com</a>
     </p>
     <p class="text-footer mb-0">calle 123, 9b</p>
     <p class="text-footer mb-0">+34 9999999</p>
@@ -25,18 +25,14 @@
     <p class="cap-footer mb-4">Legal</p>
     <ul class="mb-0 pl-0">
       <li>
-        <a
-          class="text-footer"
-          href="https://hecmar.com/aviso-legal/"
-          target="_blank"
-        >
+        <a class="text-footer" [routerLink]="['/aviso-legal']" target="_blank">
           Aviso legal</a
         >
       </li>
       <li>
         <a
           class="text-footer"
-          href="https://hecmar.com/politicas-de-cookies/"
+          [routerLink]="['/politicas-de-cookies']"
           target="_blank"
         >
           Politica de cookies</a
@@ -45,7 +41,7 @@
       <li>
         <a
           class="text-footer"
-          href="https://hecmar.com/politicas-de-privacidad/"
+          [routerLink]="['/politicas-de-privacidad']"
           target="_blank"
         >
           Politica de privacidad</a
