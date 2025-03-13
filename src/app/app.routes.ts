@@ -20,10 +20,10 @@ export const routes: Routes = [
         (m) => m.ContactoComponent
       ),
   },
-  {
-    path: 'blog',
-    loadComponent: () =>
-      import('./pages/blog/blog.component').then((m) => m.BlogComponent),
-  },
+  // {
+  //   path: 'blog',
+  //   loadComponent: () =>
+  //     import('./pages/blog/blog.component').then((m) => m.BlogComponent),
+  // },
   { path: '**', redirectTo: '' },
 ];
