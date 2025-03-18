@@ -14,36 +14,53 @@
 </section>
 
 <div class="container mx-auto p-6 grid md:grid-cols-2 gap-6">
-  <form class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+  <form
+    [formGroup]="contacForm"
+    class="bg-white p-6 rounded-lg shadow-lg space-y-4"
+  >
     <h2 class="text-2xl font-semibold">Contáctanos</h2>
     <input
+      #name
+      id="name"
+      name="name"
+      formControlName="name"
       type="text"
       placeholder="Nombre *"
       class="w-full p-2 border rounded"
-      required
     />
     <input
+      #phone
+      id="phone"
+      name="phone"
+      formControlName="phone"
       type="tel"
       placeholder="Teléfono *"
       class="w-full p-2 border rounded"
-      required
     />
     <input
+      #email
+      id="email"
+      name="email"
+      formControlName="email"
       type="email"
       placeholder="Correo electrónico *"
       class="w-full p-2 border rounded"
-      required
     />
     <textarea
+      #message
+      id="message"
+      name="message"
+      formControlName="message"
       placeholder="Mensaje *"
       class="w-full p-2 border rounded"
-      required
     ></textarea>
     <label class="flex items-center space-x-2">
       <input type="checkbox" required />
       <span
         >He leído y acepto la
-        <a [routerLink]="['/']" class="text-[#0092ca] underline"
+        <a
+          [routerLink]="['/politica-privacidad']"
+          class="text-[#0092ca] underline"
           >Política de Privacidad</a
         ></span
       >

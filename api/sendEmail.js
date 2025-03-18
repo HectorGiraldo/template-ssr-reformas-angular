@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, message } = req.body;
+  const { name, email, message, phone } = req.body;
 
   // Configuración del transportador SMTP con OVH
   const transporter = nodemailer.createTransport({
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       from: `"${name}" <${process.env.EMAIL_USER}>`, // Nombre + correo que envía
       to: process.env.EMAIL_RECEIVER, // Destinatario
       subject: `Mensaje de ${name}`,
-      text: message,
+      text: { message, phone },
       replyTo: email, // Para que el destinatario pueda responder al remitente
     };
 
