@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { EmailService } from '../../services/email.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +9,6 @@ import { EmailService } from '../../services/email.service';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  constructor(private email: EmailService) {}
   items = [
     {
       titulo: ' Integrales',
@@ -50,14 +48,4 @@ export class HomeComponent {
         'Si necesitas sacar el máximo aprovechamiento de tu espacio y vivir en paz y tranquilidad en tu piso, cuenta con nosotros para darte lo mejor.',
     },
   ];
-
-  sendEmail() {
-    this.email
-      .sendEmail({
-        name: 'hector',
-        email: 'boykan30@gmail.com',
-        message: 'Hello World correo funciona',
-      })
-      .subscribe();
-  }
 }
