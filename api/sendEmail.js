@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       from: `"${name}" <${process.env.EMAIL_USER}>`, // Nombre + correo que envía
       to: process.env.EMAIL_RECEIVER, // Destinatario
       subject: `Mensaje de ${name}`,
-      text: { message, phone },
+      text: `${message} \n\n Teléfono de contacto: ${phone}`,
       replyTo: email, // Para que el destinatario pueda responder al remitente
     };
 
