@@ -18,6 +18,6 @@ export class ContactoComponent {
         email: 'boykan30@gmail.com',
         message: 'Hello World correo funciona',
       })
-      .subscribe();
+      .subscribe(console.log);
   }
 }
