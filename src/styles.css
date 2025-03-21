@@ -11,12 +11,13 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 .footer-background {
-  background-color: white !important;
+  background-color: black !important;
 }
 .logo-white {
   text-decoration: none;
   background-image: url(./../src/assets/img/hecmar-logo.jpg);
   background-repeat: no-repeat;
+  background-size: contain;
   width: 10rem;
   height: 10rem;
 }
