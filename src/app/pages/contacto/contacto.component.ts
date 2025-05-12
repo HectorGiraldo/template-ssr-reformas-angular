@@ -25,7 +25,12 @@ export class ContactoComponent implements OnInit {
   }
 
   sendEmail() {
-    this.email.sendEmail(this.contacForm.value).subscribe(console.log);
+    if (this.contacForm.valid) {
+      this.email.sendEmail(this.contacForm.value).subscribe((res) => {
+        alert('Email enviado');
+        this.contacForm.reset();
+      });
+    }
   }
 
   initForm() {

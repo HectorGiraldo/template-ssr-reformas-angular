@@ -55,7 +55,14 @@
       class="w-full p-2 border rounded"
     ></textarea>
     <label class="flex items-center space-x-2">
-      <input type="checkbox" required />
+      <input
+        type="checkbox"
+        #policy
+        id="policy"
+        name="policy"
+        formControlName="policy"
+        required
+      />
       <span
         >He leído y acepto la
         <a
