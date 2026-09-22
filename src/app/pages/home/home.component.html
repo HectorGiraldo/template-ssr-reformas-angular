@@ -27,7 +27,15 @@
     <div class="grid md:grid-cols-3 gap-8 mt-6">
       @for (item of items; track item) {
         <div class="bg-white shadow-lg">
-          <img [ngSrc]="item.img" [width]="item.width" [height]="item.height" alt="" class="h-80 w-full object-cover" />
+          <img
+            [ngSrc]="item.img"
+            [ngSrcset]="'480w, ' + item.width + 'w'"
+            sizes="(min-width: 768px) 33vw, 100vw"
+            [width]="item.width"
+            [height]="item.height"
+            alt=""
+            class="h-80 w-full object-cover"
+          />
           <div class="py-8">
             <p>
               <span class="text-3xl text-[#996600] font-medium">Reformas</span>
