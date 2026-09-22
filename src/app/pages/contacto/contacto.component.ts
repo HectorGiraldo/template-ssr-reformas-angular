@@ -8,11 +8,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { EmailService } from '../../services/email.service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-contacto',
-  imports: [RouterModule, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css',
 })
@@ -26,9 +26,14 @@ export class ContactoComponent implements OnInit {
 
   sendEmail() {
     if (this.contacForm.valid) {
-      this.email.sendEmail(this.contacForm.value).subscribe((res) => {
-        alert('Email enviado');
-        this.contacForm.reset();
+      this.email.sendEmail(this.contacForm.value).subscribe({
+        next: () => {
+          alert('Email enviado');
+          this.contacForm.reset();
+        },
+        error: () => {
+          alert('No se pudo enviar el mensaje. Inténtalo de nuevo más tarde.');
+        },
       });
     }
   }
