@@ -1,6 +1,7 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,20 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+
+  ngOnInit(): void {
+    this.seo.update(
+      {
+        title: 'Reformas en Madrid',
+        description:
+          'Empresa de reformas integrales en Madrid: viviendas, locales, oficinas y pisos. Más de 10 años de experiencia y garantía de calidad.',
+      },
+      '/'
+    );
+  }
+
   items = [
     {
       titulo: ' Integrales',

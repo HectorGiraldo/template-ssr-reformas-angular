@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
   FormControl,
@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { EmailService } from '../../services/email.service';
+import { SeoService } from '../../services/seo.service';
 
 
 @Component({
@@ -17,11 +18,20 @@ import { EmailService } from '../../services/email.service';
   styleUrl: './contacto.component.css',
 })
 export class ContactoComponent implements OnInit {
+  private readonly seo = inject(SeoService);
   contacForm!: FormGroup;
   constructor(private email: EmailService) {}
 
   ngOnInit() {
     this.initForm();
+    this.seo.update(
+      {
+        title: 'Contacto',
+        description:
+          'Solicita presupuesto sin compromiso para tu reforma en Madrid. Te respondemos a la mayor brevedad posible.',
+      },
+      '/contacto'
+    );
   }
 
   sendEmail() {
