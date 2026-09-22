@@ -8,11 +8,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { EmailService } from '../../services/email.service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-contacto',
-  imports: [RouterModule, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css',
 })

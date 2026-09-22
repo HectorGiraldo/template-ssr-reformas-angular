@@ -3,7 +3,7 @@
   <div class="backgroung-home min-h-[78vh] flex items-center justify-center">
     <div
       class="container mx-auto flex flex-col justify-center items-center h-full px-6"
-    >
+      >
       <div>
         <p class="text-white text-4xl font-medium">Empieza ya tu reforma</p>
         <h1 class="text-7xl text text-white font-medium">Reformas en Madrid</h1>
@@ -25,18 +25,20 @@
       Reformas, interiorismo y decoración en Madrid
     </h3>
     <div class="grid md:grid-cols-3 gap-8 mt-6">
-      <div *ngFor="let item of items" class="bg-white shadow-lg">
-        <img [src]="item.img" alt="" class="h-80" />
-        <div class="py-8">
-          <p>
-            <span class="text-3xl text-[#FFC145] font-medium">Reformas</span>
-            <span class="text-3xl font-medium"> {{ item.titulo }}</span>
-          </p>
-          <p class="font-medium text-lg px-8 py-4 text-gray-700">
-            {{ item.descripcion }}
-          </p>
+      @for (item of items; track item) {
+        <div class="bg-white shadow-lg">
+          <img [src]="item.img" alt="" class="h-80" />
+          <div class="py-8">
+            <p>
+              <span class="text-3xl text-[#FFC145] font-medium">Reformas</span>
+              <span class="text-3xl font-medium"> {{ item.titulo }}</span>
+            </p>
+            <p class="font-medium text-lg px-8 py-4 text-gray-700">
+              {{ item.descripcion }}
+            </p>
+          </div>
         </div>
-      </div>
+      }
     </div>
   </div>
 </section>
@@ -58,7 +60,7 @@
         <button
           [routerLink]="['/contacto']"
           class="mt-6 inline-block bg-[#FFC145] text-white px-6 py-3"
-        >
+          >
           Contáctanos
         </button>
       </div>
@@ -68,224 +70,224 @@
           [src]="'/assets/img/lideres.jpg'"
           alt="Reforma de Oficina"
           class="shadow-lg"
-        />
+          />
+        </div>
       </div>
+    </section>
+  </section>
+
+  <!-- Sección Transformamos los Espacios -->
+  <section class="bg-white pt-12 pb-4 text-center">
+    <div class="container mx-auto px-6">
+      <p class="text-xl mt-2 text-[#FFC145]">Mejoramos la vida de las personas</p>
+      <h2 class="text-4xl font-medium">Transformamos los espacios</h2>
     </div>
   </section>
-</section>
 
-<!-- Sección Transformamos los Espacios -->
-<section class="bg-white pt-12 pb-4 text-center">
-  <div class="container mx-auto px-6">
-    <p class="text-xl mt-2 text-[#FFC145]">Mejoramos la vida de las personas</p>
-    <h2 class="text-4xl font-medium">Transformamos los espacios</h2>
-  </div>
-</section>
-
-<section class="container mx-auto grid md:grid-cols-3 py-12 px-20">
-  <!-- Interiorismo -->
-  <div class="bg-[#FFC145]">
-    <img
-      [src]="'/assets/img/interiorismo.jpg'"
-      alt="Reforma de cocina moderna"
-      class="shadow-lg mx-auto h-[700px]"
-    />
-    <div class="px-10 py-20">
-      <h3 class="text-white text-3xl font-medium my-5">Interiorismo</h3>
-      <p class="text-white text-lg">
-        transformamos interiores con un equilibrio perfecto entre estética,
-        funcionalidad y personalidad.
-      </p>
-    </div>
-  </div>
-
-  <!-- El Método -->
-  <div class="bg-gray-300">
-    <div class="px-10 py-20">
-      <h3 class="text-3xl font-medium my-5">El Método</h3>
-      <p class="text-lg">
-        Seguimos un método eficiente para garantizar calidad, cumplimiento y
-        satisfacción en cada proyecto.
-      </p>
-    </div>
-
-    <img
-      [src]="'/assets/img/metodo.jpg'"
-      alt="Comedor industrial"
-      class="shadow-lg mx-auto mt-4 h-[700px]"
-    />
-  </div>
-
-  <!-- Reformas -->
-  <div class="shadow-lg">
-    <img
-      [src]="'/assets/img/casa.jpg'"
-      alt="Reforma integral vivienda"
-      class="shadow-lg mx-auto h-[700px]"
-    />
-    <div class="px-10 py-20">
-      <h3 class="text-[#FFC145] text-3xl font-medium my-5">Reformas</h3>
-      <p class="text-gray-700 text-lg">
-        Somos especialistas en la renovación de viviendas, locales y oficinas,
-        cuidando cada detalle.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="container mx-auto px-6 text-center py-12 bg-gray-100">
-  <p class="text-xl text-[#FFC145]">Calidad en cada proyecto</p>
-  <h2 class="text-4xl font-medium">La calidad es nuestra firma</h2>
-
-  <div class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- Diseño de espacios -->
-    <div class="text-center">
+  <section class="container mx-auto grid md:grid-cols-3 py-12 px-20">
+    <!-- Interiorismo -->
+    <div class="bg-[#FFC145]">
       <img
-        class="mx-auto shadow-lg h-28 w-28 rounded-full"
-        [src]="'/assets/img/bano-1.jpg'"
-        alt="Diseño de espacios"
-      />
-      <div>
-        <p class="mt-4">
-          <span class="text-3xl font-medium text-[#FFC145]">Diseño</span>
-          <span class="text-3xl font-medium"> de espacios</span>
-        </p>
-
-        <p class="text-gray-700">
-          Cuidamos y mimamos el diseño de tu vivienda, local u oficina,
-          adaptándolo a tu gusto con nuestra experiencia.
-        </p>
+        [src]="'/assets/img/interiorismo.jpg'"
+        alt="Reforma de cocina moderna"
+        class="shadow-lg mx-auto h-[700px]"
+        />
+        <div class="px-10 py-20">
+          <h3 class="text-white text-3xl font-medium my-5">Interiorismo</h3>
+          <p class="text-white text-lg">
+            transformamos interiores con un equilibrio perfecto entre estética,
+            funcionalidad y personalidad.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <!-- Materiales de calidad -->
-    <div class="text-center">
-      <img
-        class="mx-auto h-28 w-28 rounded-full shadow-lg"
-        [src]="'/assets/img/materiales.jpg'"
-        alt="Materiales de calidad"
-      />
-      <div>
-        <p class="mt-4">
-          <span class="text-3xl font-medium text-[#FFC145]">Materiales</span>
-          <span class="text-3xl font-medium"> de calidad</span>
-        </p>
-        <p class="text-gray-700">
-          Contamos con un amplio repertorio de proveedores nacionales e
-          internacionales para adaptarnos a tu presupuesto.
-        </p>
-      </div>
-    </div>
+      <!-- El Método -->
+      <div class="bg-gray-300">
+        <div class="px-10 py-20">
+          <h3 class="text-3xl font-medium my-5">El Método</h3>
+          <p class="text-lg">
+            Seguimos un método eficiente para garantizar calidad, cumplimiento y
+            satisfacción en cada proyecto.
+          </p>
+        </div>
 
-    <!-- Versatilidad y cercanía -->
-    <div class="text-center">
-      <img
-        class="mx-auto h-28 w-28 rounded-full shadow-lg"
-        [src]="'/assets/img/obra.jpg'"
-        alt="Versatilidad y cercanía"
-      />
-      <div>
-        <p class="mt-4">
-          <span class="text-3xl font-medium text-[#FFC145]">Versatilidad</span>
-          <span class="text-3xl font-medium"> y cercanía</span>
-        </p>
-        <p class="text-gray-700">
-          Nos adaptamos a tu presupuesto y estilo para reflejar tu personalidad
-          en cada espacio.
-        </p>
-      </div>
-    </div>
-  </div>
+        <img
+          [src]="'/assets/img/metodo.jpg'"
+          alt="Comedor industrial"
+          class="shadow-lg mx-auto mt-4 h-[700px]"
+          />
+        </div>
 
-  <div
-    class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-1 px-20"
-  >
-    <img
-      class="shadow-md h-72"
-      [src]="'/assets/img/local-2.jpg'"
-      alt="Proyecto Embajadores"
-    />
-    <img
-      class="shadow-md h-72"
-      [src]="'/assets/img/salon.jpg'"
-      alt="Proyecto Manchester"
-    />
-    <img
-      class="shadow-md h-72"
-      [src]="'/assets/img/oficina-2.jpg'"
-      alt="Proyecto Moralzarzal"
-    />
-  </div>
-</section>
-<section class="container mx-auto px-6 text-center py-12 bg-gray-100">
-  <p class="text-xl text-[#FFC145]">Alianzas Estratégicas</p>
-  <h2 class="text-4xl font-medium">Entidades que confían en nosotros</h2>
-  <div
-    class="container mx-auto mt-10 grid grid-cols-1 bg-white md:grid-cols-3 gap-1 px-20 justify-items-center"
-  >
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/adif-logo.png'"
-        alt="ADIF Logo"
-      />
-    </div>
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/ministerio-defensa-logo.png'"
-        alt="Ministerio de Defensa Logo"
-      />
-    </div>
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/correos-logo.jpg'"
-        alt="Correos Logo"
-      />
-    </div>
+        <!-- Reformas -->
+        <div class="shadow-lg">
+          <img
+            [src]="'/assets/img/casa.jpg'"
+            alt="Reforma integral vivienda"
+            class="shadow-lg mx-auto h-[700px]"
+            />
+            <div class="px-10 py-20">
+              <h3 class="text-[#FFC145] text-3xl font-medium my-5">Reformas</h3>
+              <p class="text-gray-700 text-lg">
+                Somos especialistas en la renovación de viviendas, locales y oficinas,
+                cuidando cada detalle.
+              </p>
+            </div>
+          </div>
+        </section>
 
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/renfe-logo.png'"
-        alt="RENFE Logo"
-      />
-    </div>
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/serveo-logo.jpg'"
-        alt="Serveo Logo"
-      />
-    </div>
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/invied-logo.jpg'"
-        alt="INVIED Logo"
-      />
-    </div>
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/bankinter-logo.jpg'"
-        alt="Bankinter Logo"
-      />
-    </div>
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/hype-logo.jpg'"
-        alt="Hype Logo"
-      />
-    </div>
-    <div class="h-32 w-full flex items-center justify-center p-6">
-      <img
-        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
-        [src]="'/assets/img/foot-locker-logo.png'"
-        alt="Foot Locker Logo"
-      />
-    </div>
-  </div>
-</section>
+        <section class="container mx-auto px-6 text-center py-12 bg-gray-100">
+          <p class="text-xl text-[#FFC145]">Calidad en cada proyecto</p>
+          <h2 class="text-4xl font-medium">La calidad es nuestra firma</h2>
+
+          <div class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Diseño de espacios -->
+            <div class="text-center">
+              <img
+                class="mx-auto shadow-lg h-28 w-28 rounded-full"
+                [src]="'/assets/img/bano-1.jpg'"
+                alt="Diseño de espacios"
+                />
+                <div>
+                  <p class="mt-4">
+                    <span class="text-3xl font-medium text-[#FFC145]">Diseño</span>
+                    <span class="text-3xl font-medium"> de espacios</span>
+                  </p>
+
+                  <p class="text-gray-700">
+                    Cuidamos y mimamos el diseño de tu vivienda, local u oficina,
+                    adaptándolo a tu gusto con nuestra experiencia.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Materiales de calidad -->
+              <div class="text-center">
+                <img
+                  class="mx-auto h-28 w-28 rounded-full shadow-lg"
+                  [src]="'/assets/img/materiales.jpg'"
+                  alt="Materiales de calidad"
+                  />
+                  <div>
+                    <p class="mt-4">
+                      <span class="text-3xl font-medium text-[#FFC145]">Materiales</span>
+                      <span class="text-3xl font-medium"> de calidad</span>
+                    </p>
+                    <p class="text-gray-700">
+                      Contamos con un amplio repertorio de proveedores nacionales e
+                      internacionales para adaptarnos a tu presupuesto.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Versatilidad y cercanía -->
+                <div class="text-center">
+                  <img
+                    class="mx-auto h-28 w-28 rounded-full shadow-lg"
+                    [src]="'/assets/img/obra.jpg'"
+                    alt="Versatilidad y cercanía"
+                    />
+                    <div>
+                      <p class="mt-4">
+                        <span class="text-3xl font-medium text-[#FFC145]">Versatilidad</span>
+                        <span class="text-3xl font-medium"> y cercanía</span>
+                      </p>
+                      <p class="text-gray-700">
+                        Nos adaptamos a tu presupuesto y estilo para reflejar tu personalidad
+                        en cada espacio.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-1 px-20"
+                  >
+                  <img
+                    class="shadow-md h-72"
+                    [src]="'/assets/img/local-2.jpg'"
+                    alt="Proyecto Embajadores"
+                    />
+                    <img
+                      class="shadow-md h-72"
+                      [src]="'/assets/img/salon.jpg'"
+                      alt="Proyecto Manchester"
+                      />
+                      <img
+                        class="shadow-md h-72"
+                        [src]="'/assets/img/oficina-2.jpg'"
+                        alt="Proyecto Moralzarzal"
+                        />
+                      </div>
+                    </section>
+                    <section class="container mx-auto px-6 text-center py-12 bg-gray-100">
+                      <p class="text-xl text-[#FFC145]">Alianzas Estratégicas</p>
+                      <h2 class="text-4xl font-medium">Entidades que confían en nosotros</h2>
+                      <div
+                        class="container mx-auto mt-10 grid grid-cols-1 bg-white md:grid-cols-3 gap-1 px-20 justify-items-center"
+                        >
+                        <div class="h-32 w-full flex items-center justify-center p-6">
+                          <img
+                            class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                            [src]="'/assets/img/adif-logo.png'"
+                            alt="ADIF Logo"
+                            />
+                          </div>
+                          <div class="h-32 w-full flex items-center justify-center p-6">
+                            <img
+                              class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                              [src]="'/assets/img/ministerio-defensa-logo.png'"
+                              alt="Ministerio de Defensa Logo"
+                              />
+                            </div>
+                            <div class="h-32 w-full flex items-center justify-center p-6">
+                              <img
+                                class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                                [src]="'/assets/img/correos-logo.jpg'"
+                                alt="Correos Logo"
+                                />
+                              </div>
+
+                              <div class="h-32 w-full flex items-center justify-center p-6">
+                                <img
+                                  class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                                  [src]="'/assets/img/renfe-logo.png'"
+                                  alt="RENFE Logo"
+                                  />
+                                </div>
+                                <div class="h-32 w-full flex items-center justify-center p-6">
+                                  <img
+                                    class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                                    [src]="'/assets/img/serveo-logo.jpg'"
+                                    alt="Serveo Logo"
+                                    />
+                                  </div>
+                                  <div class="h-32 w-full flex items-center justify-center p-6">
+                                    <img
+                                      class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                                      [src]="'/assets/img/invied-logo.jpg'"
+                                      alt="INVIED Logo"
+                                      />
+                                    </div>
+                                    <div class="h-32 w-full flex items-center justify-center p-6">
+                                      <img
+                                        class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                                        [src]="'/assets/img/bankinter-logo.jpg'"
+                                        alt="Bankinter Logo"
+                                        />
+                                      </div>
+                                      <div class="h-32 w-full flex items-center justify-center p-6">
+                                        <img
+                                          class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                                          [src]="'/assets/img/hype-logo.jpg'"
+                                          alt="Hype Logo"
+                                          />
+                                        </div>
+                                        <div class="h-32 w-full flex items-center justify-center p-6">
+                                          <img
+                                            class="max-h-full max-w-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                                            [src]="'/assets/img/foot-locker-logo.png'"
+                                            alt="Foot Locker Logo"
+                                            />
+                                          </div>
+                                        </div>
+                                      </section>
