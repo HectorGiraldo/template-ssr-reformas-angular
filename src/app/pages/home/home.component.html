@@ -27,7 +27,7 @@
     <div class="grid md:grid-cols-3 gap-8 mt-6">
       @for (item of items; track item) {
         <div class="bg-white shadow-lg">
-          <img [src]="item.img" alt="" class="h-80" />
+          <img [ngSrc]="item.img" [width]="item.width" [height]="item.height" alt="" class="h-80 w-full object-cover" />
           <div class="py-8">
             <p>
               <span class="text-3xl text-[#FFC145] font-medium">Reformas</span>
@@ -67,7 +67,9 @@
       <!-- Imagen -->
       <div>
         <img
-          [src]="'/assets/img/lideres.jpg'"
+          [ngSrc]="'/assets/img/lideres.jpg'"
+          width="1200"
+          height="799"
           alt="Reforma de Oficina"
           class="shadow-lg"
           />
@@ -88,9 +90,11 @@
     <!-- Interiorismo -->
     <div class="bg-[#FFC145]">
       <img
-        [src]="'/assets/img/interiorismo.jpg'"
+        [ngSrc]="'/assets/img/interiorismo.jpg'"
+        width="1186"
+        height="1200"
         alt="Reforma de cocina moderna"
-        class="shadow-lg mx-auto h-[700px]"
+        class="shadow-lg mx-auto h-[700px] w-full object-cover"
         />
         <div class="px-10 py-20">
           <h3 class="text-white text-3xl font-medium my-5">Interiorismo</h3>
@@ -112,18 +116,22 @@
         </div>
 
         <img
-          [src]="'/assets/img/metodo.jpg'"
+          [ngSrc]="'/assets/img/metodo.jpg'"
+          width="488"
+          height="650"
           alt="Comedor industrial"
-          class="shadow-lg mx-auto mt-4 h-[700px]"
+          class="shadow-lg mx-auto mt-4 h-[700px] w-full object-cover"
           />
         </div>
 
         <!-- Reformas -->
         <div class="shadow-lg">
           <img
-            [src]="'/assets/img/casa.jpg'"
+            [ngSrc]="'/assets/img/casa.jpg'"
+            width="564"
+            height="564"
             alt="Reforma integral vivienda"
-            class="shadow-lg mx-auto h-[700px]"
+            class="shadow-lg mx-auto h-[700px] w-full object-cover"
             />
             <div class="px-10 py-20">
               <h3 class="text-[#FFC145] text-3xl font-medium my-5">Reformas</h3>
@@ -143,8 +151,10 @@
             <!-- Diseño de espacios -->
             <div class="text-center">
               <img
-                class="mx-auto shadow-lg h-28 w-28 rounded-full"
-                [src]="'/assets/img/bano-1.jpg'"
+                class="mx-auto shadow-lg h-28 w-28 rounded-full object-cover"
+                [ngSrc]="'/assets/img/bano-1.jpg'"
+                width="238"
+                height="320"
                 alt="Diseño de espacios"
                 />
                 <div>
@@ -163,8 +173,10 @@
               <!-- Materiales de calidad -->
               <div class="text-center">
                 <img
-                  class="mx-auto h-28 w-28 rounded-full shadow-lg"
-                  [src]="'/assets/img/materiales.jpg'"
+                  class="mx-auto h-28 w-28 rounded-full shadow-lg object-cover"
+                  [ngSrc]="'/assets/img/materiales.jpg'"
+                  width="228"
+                  height="221"
                   alt="Materiales de calidad"
                   />
                   <div>
@@ -182,8 +194,10 @@
                 <!-- Versatilidad y cercanía -->
                 <div class="text-center">
                   <img
-                    class="mx-auto h-28 w-28 rounded-full shadow-lg"
-                    [src]="'/assets/img/obra.jpg'"
+                    class="mx-auto h-28 w-28 rounded-full shadow-lg object-cover"
+                    [ngSrc]="'/assets/img/obra.jpg'"
+                    width="320"
+                    height="180"
                     alt="Versatilidad y cercanía"
                     />
                     <div>
@@ -203,18 +217,24 @@
                   class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-1 px-20"
                   >
                   <img
-                    class="shadow-md h-72"
-                    [src]="'/assets/img/local-2.jpg'"
+                    class="shadow-md h-72 w-full object-cover"
+                    [ngSrc]="'/assets/img/local-2.jpg'"
+                    width="1280"
+                    height="720"
                     alt="Proyecto Embajadores"
                     />
                     <img
-                      class="shadow-md h-72"
-                      [src]="'/assets/img/salon.jpg'"
+                      class="shadow-md h-72 w-full object-cover"
+                      [ngSrc]="'/assets/img/salon.jpg'"
+                      width="900"
+                      height="554"
                       alt="Proyecto Manchester"
                       />
                       <img
-                        class="shadow-md h-72"
-                        [src]="'/assets/img/oficina-2.jpg'"
+                        class="shadow-md h-72 w-full object-cover"
+                        [ngSrc]="'/assets/img/oficina-2.jpg'"
+                        width="800"
+                        height="533"
                         alt="Proyecto Moralzarzal"
                         />
                       </div>
