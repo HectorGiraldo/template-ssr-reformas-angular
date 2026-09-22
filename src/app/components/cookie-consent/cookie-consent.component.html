@@ -1,0 +1,30 @@
+@if (visible) {
+  <div
+    class="fixed inset-x-0 bottom-0 z-50 bg-black text-white px-6 py-4 flex flex-col md:flex-row md:items-center gap-4 shadow-lg"
+    role="dialog"
+    aria-live="polite"
+    aria-label="Aviso de cookies"
+  >
+    <p class="text-sm flex-1">
+      Usamos cookies propias esenciales para el funcionamiento del sitio. Puedes
+      aceptarlas o rechazarlas; consulta más información en nuestra
+      <a [routerLink]="['/politica-cookies']" class="underline">Política de Cookies</a>.
+    </p>
+    <div class="flex gap-3 shrink-0">
+      <button
+        type="button"
+        (click)="reject()"
+        class="px-4 py-2 border border-white text-white text-sm"
+      >
+        Rechazar
+      </button>
+      <button
+        type="button"
+        (click)="accept()"
+        class="px-4 py-2 bg-[#FFC145] text-gray-900 font-semibold text-sm"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+}
