@@ -1,36 +1,59 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule],
+  imports: [RouterModule, NgOptimizedImage],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+
+  ngOnInit(): void {
+    this.seo.update(
+      {
+        title: 'Reformas en Madrid',
+        description:
+          'Empresa de reformas integrales en Madrid: viviendas, locales, oficinas y pisos. Más de 10 años de experiencia y garantía de calidad.',
+      },
+      '/'
+    );
+  }
+
   items = [
     {
       titulo: ' Integrales',
       img: '/assets/img/Reformas-de-casas.jpg',
+      width: 709,
+      height: 398,
       descripcion:
         'Nuestro producto estrella, donde más valor aportamos y donde sacamos todo el potencial de tu vivienda para adecuarla a tus necesidades.',
     },
     {
       titulo: ' de Locales',
       img: '/assets/img/local.jpg',
+      width: 900,
+      height: 506,
       descripcion:
         'Si buscas lo mejor para tu negocio, esta es nuestra mejor propuesta. Calidad, diseño y velocidad de realización es lo que ofrecemos para ti y tus clientes.',
     },
     {
       titulo: ' de Casas',
       img: '/assets/img/background.jpg',
+      width: 900,
+      height: 506,
       descripcion:
         'Si tienes una casa con parcela y quieres que la reforma interior y exterior se integren consiguiendo la casa de tus sueños, Alto Nivel Reformas es tu mejor elección.',
     },
     {
       titulo: ' de Lujo',
       img: '/assets/img/Lujo.jpg',
+      width: 1080,
+      height: 550,
       descripcion:
         '¿Te gustan los mejores materiales y los acabados de primerísima calidad? Este es tu sitio, aquí hacemos realidad todos tus deseos en una reforma de primera clase.',
     },
@@ -38,12 +61,16 @@ export class HomeComponent {
     {
       titulo: ' de Oficinas',
       img: '/assets/img/oficina.jpg',
+      width: 900,
+      height: 600,
       descripcion:
         'Si quieres trabajar en un entorno fantástico, con la mejor tecnología, con un aumento sustancial de la productividad y la felicidad de la plantilla, somos tu empresa de confianza.',
     },
     {
       titulo: ' de Pisos',
       img: '/assets/img/Pisos.jpg',
+      width: 900,
+      height: 600,
       descripcion:
         'Si necesitas sacar el máximo aprovechamiento de tu espacio y vivir en paz y tranquilidad en tu piso, cuenta con nosotros para darte lo mejor.',
     },

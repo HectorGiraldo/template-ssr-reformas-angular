@@ -9,8 +9,11 @@
       class="flex items-center space-x-3 rtl:space-x-reverse"
     >
       <img
-        [src]="'/assets/img/hecmar-logo.jpg'"
-        class="h-24"
+        [ngSrc]="'/assets/img/hecmar-logo.jpg'"
+        width="400"
+        height="351"
+        priority
+        class="h-24 w-auto"
         alt="hecmar Logo"
       />
       <span class="self-center text-xl whitespace-nowrap text-white font-light"
@@ -51,7 +54,7 @@
             [routerLink]="'/'"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            class="text-white"
+            class="text-gray-900 md:text-white"
             (click)="closeMenu()"
             >Inicio</a
           >
@@ -60,26 +63,16 @@
           <a
             [routerLink]="'/servicios'"
             routerLinkActive="active"
-            class="text-white"
+            class="text-gray-900 md:text-white"
             (click)="closeMenu()"
             >Servicios</a
           >
         </li>
-        <!-- <li>
-          <a
-            [routerLink]="'/blog'"
-            routerLinkActive="active"
-            class="text-white"
-            (click)="closeMenu()"
-            >Blog</a
-          >
-        </li> -->
-
         <li>
           <a
             [routerLink]="'/contacto'"
             routerLinkActive="active"
-            class="text-white"
+            class="text-gray-900 md:text-white"
             (click)="closeMenu()"
             >Contacto</a
           >

@@ -1,6 +1,14 @@
 .active {
   font-weight: 600;
-  color: #FFC145;
+  /* Accessible on the mobile menu's light background (~4.9:1 contrast) */
+  color: #996600;
+}
+
+@media (min-width: 768px) {
+  .active {
+    /* The desktop nav is black, so the brighter brand gold reads fine (~13:1) */
+    color: #FFC145;
+  }
 }
 
 a{

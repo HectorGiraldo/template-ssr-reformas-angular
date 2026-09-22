@@ -18,7 +18,7 @@
 <!-- Servicios -->
 <section id="servicios" class="py-12">
   <div class="container mx-auto text-center px-6">
-    <h2 class="text-xl text-[#FFC145] font-medium pb-2">
+    <h2 class="text-xl text-[#996600] font-medium pb-2">
       Líderes en nuestro sector
     </h2>
     <h3 class="text-4xl font-medium">
@@ -27,10 +27,18 @@
     <div class="grid md:grid-cols-3 gap-8 mt-6">
       @for (item of items; track item) {
         <div class="bg-white shadow-lg">
-          <img [src]="item.img" alt="" class="h-80" />
+          <img
+            [ngSrc]="item.img"
+            [ngSrcset]="'480w, ' + item.width + 'w'"
+            sizes="(min-width: 768px) 33vw, 100vw"
+            [width]="item.width"
+            [height]="item.height"
+            alt=""
+            class="h-80 w-full object-cover"
+          />
           <div class="py-8">
             <p>
-              <span class="text-3xl text-[#FFC145] font-medium">Reformas</span>
+              <span class="text-3xl text-[#996600] font-medium">Reformas</span>
               <span class="text-3xl font-medium"> {{ item.titulo }}</span>
             </p>
             <p class="font-medium text-lg px-8 py-4 text-gray-700">
@@ -49,7 +57,7 @@
       <!-- Texto -->
       <div>
         <h2 class="text-3xl font-bold">
-          Líderes en <span class="text-[#FFC145]">reformas en Madrid</span>
+          Líderes en <span class="text-[#996600]">reformas en Madrid</span>
         </h2>
         <p class="mt-4 text-lg">
           Siendo una de las empresas
@@ -59,7 +67,7 @@
         </p>
         <button
           [routerLink]="['/contacto']"
-          class="mt-6 inline-block bg-[#FFC145] text-white px-6 py-3"
+          class="mt-6 inline-block bg-[#FFC145] text-gray-900 font-semibold px-6 py-3"
           >
           Contáctanos
         </button>
@@ -67,7 +75,9 @@
       <!-- Imagen -->
       <div>
         <img
-          [src]="'/assets/img/lideres.jpg'"
+          [ngSrc]="'/assets/img/lideres.jpg'"
+          width="1200"
+          height="799"
           alt="Reforma de Oficina"
           class="shadow-lg"
           />
@@ -79,22 +89,24 @@
   <!-- Sección Transformamos los Espacios -->
   <section class="bg-white pt-12 pb-4 text-center">
     <div class="container mx-auto px-6">
-      <p class="text-xl mt-2 text-[#FFC145]">Mejoramos la vida de las personas</p>
+      <p class="text-xl mt-2 text-[#996600]">Mejoramos la vida de las personas</p>
       <h2 class="text-4xl font-medium">Transformamos los espacios</h2>
     </div>
   </section>
 
-  <section class="container mx-auto grid md:grid-cols-3 py-12 px-20">
+  <section class="container mx-auto grid md:grid-cols-3 py-12 px-6 md:px-20">
     <!-- Interiorismo -->
     <div class="bg-[#FFC145]">
       <img
-        [src]="'/assets/img/interiorismo.jpg'"
+        [ngSrc]="'/assets/img/interiorismo.jpg'"
+        width="1186"
+        height="1200"
         alt="Reforma de cocina moderna"
-        class="shadow-lg mx-auto h-[700px]"
+        class="shadow-lg mx-auto h-[700px] w-full object-cover"
         />
         <div class="px-10 py-20">
-          <h3 class="text-white text-3xl font-medium my-5">Interiorismo</h3>
-          <p class="text-white text-lg">
+          <h3 class="text-gray-900 text-3xl font-medium my-5">Interiorismo</h3>
+          <p class="text-gray-900 text-lg">
             transformamos interiores con un equilibrio perfecto entre estética,
             funcionalidad y personalidad.
           </p>
@@ -112,21 +124,25 @@
         </div>
 
         <img
-          [src]="'/assets/img/metodo.jpg'"
+          [ngSrc]="'/assets/img/metodo.jpg'"
+          width="488"
+          height="650"
           alt="Comedor industrial"
-          class="shadow-lg mx-auto mt-4 h-[700px]"
+          class="shadow-lg mx-auto mt-4 h-[700px] w-full object-cover"
           />
         </div>
 
         <!-- Reformas -->
         <div class="shadow-lg">
           <img
-            [src]="'/assets/img/casa.jpg'"
+            [ngSrc]="'/assets/img/casa.jpg'"
+            width="564"
+            height="564"
             alt="Reforma integral vivienda"
-            class="shadow-lg mx-auto h-[700px]"
+            class="shadow-lg mx-auto h-[700px] w-full object-cover"
             />
             <div class="px-10 py-20">
-              <h3 class="text-[#FFC145] text-3xl font-medium my-5">Reformas</h3>
+              <h3 class="text-[#996600] text-3xl font-medium my-5">Reformas</h3>
               <p class="text-gray-700 text-lg">
                 Somos especialistas en la renovación de viviendas, locales y oficinas,
                 cuidando cada detalle.
@@ -136,20 +152,22 @@
         </section>
 
         <section class="container mx-auto px-6 text-center py-12 bg-gray-100">
-          <p class="text-xl text-[#FFC145]">Calidad en cada proyecto</p>
+          <p class="text-xl text-[#996600]">Calidad en cada proyecto</p>
           <h2 class="text-4xl font-medium">La calidad es nuestra firma</h2>
 
           <div class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Diseño de espacios -->
             <div class="text-center">
               <img
-                class="mx-auto shadow-lg h-28 w-28 rounded-full"
-                [src]="'/assets/img/bano-1.jpg'"
+                class="mx-auto shadow-lg h-28 w-28 rounded-full object-cover"
+                [ngSrc]="'/assets/img/bano-1.jpg'"
+                width="238"
+                height="320"
                 alt="Diseño de espacios"
                 />
                 <div>
                   <p class="mt-4">
-                    <span class="text-3xl font-medium text-[#FFC145]">Diseño</span>
+                    <span class="text-3xl font-medium text-[#996600]">Diseño</span>
                     <span class="text-3xl font-medium"> de espacios</span>
                   </p>
 
@@ -163,13 +181,15 @@
               <!-- Materiales de calidad -->
               <div class="text-center">
                 <img
-                  class="mx-auto h-28 w-28 rounded-full shadow-lg"
-                  [src]="'/assets/img/materiales.jpg'"
+                  class="mx-auto h-28 w-28 rounded-full shadow-lg object-cover"
+                  [ngSrc]="'/assets/img/materiales.jpg'"
+                  width="228"
+                  height="221"
                   alt="Materiales de calidad"
                   />
                   <div>
                     <p class="mt-4">
-                      <span class="text-3xl font-medium text-[#FFC145]">Materiales</span>
+                      <span class="text-3xl font-medium text-[#996600]">Materiales</span>
                       <span class="text-3xl font-medium"> de calidad</span>
                     </p>
                     <p class="text-gray-700">
@@ -182,13 +202,15 @@
                 <!-- Versatilidad y cercanía -->
                 <div class="text-center">
                   <img
-                    class="mx-auto h-28 w-28 rounded-full shadow-lg"
-                    [src]="'/assets/img/obra.jpg'"
+                    class="mx-auto h-28 w-28 rounded-full shadow-lg object-cover"
+                    [ngSrc]="'/assets/img/obra.jpg'"
+                    width="320"
+                    height="180"
                     alt="Versatilidad y cercanía"
                     />
                     <div>
                       <p class="mt-4">
-                        <span class="text-3xl font-medium text-[#FFC145]">Versatilidad</span>
+                        <span class="text-3xl font-medium text-[#996600]">Versatilidad</span>
                         <span class="text-3xl font-medium"> y cercanía</span>
                       </p>
                       <p class="text-gray-700">
@@ -200,27 +222,33 @@
                 </div>
 
                 <div
-                  class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-1 px-20"
+                  class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-1 px-6 md:px-20"
                   >
                   <img
-                    class="shadow-md h-72"
-                    [src]="'/assets/img/local-2.jpg'"
+                    class="shadow-md h-72 w-full object-cover"
+                    [ngSrc]="'/assets/img/local-2.jpg'"
+                    width="1280"
+                    height="720"
                     alt="Proyecto Embajadores"
                     />
                     <img
-                      class="shadow-md h-72"
-                      [src]="'/assets/img/salon.jpg'"
+                      class="shadow-md h-72 w-full object-cover"
+                      [ngSrc]="'/assets/img/salon.jpg'"
+                      width="900"
+                      height="554"
                       alt="Proyecto Manchester"
                       />
                       <img
-                        class="shadow-md h-72"
-                        [src]="'/assets/img/oficina-2.jpg'"
+                        class="shadow-md h-72 w-full object-cover"
+                        [ngSrc]="'/assets/img/oficina-2.jpg'"
+                        width="800"
+                        height="533"
                         alt="Proyecto Moralzarzal"
                         />
                       </div>
                     </section>
                     <section class="container mx-auto px-6 text-center py-12 bg-gray-100">
-                      <p class="text-xl text-[#FFC145]">Alianzas Estratégicas</p>
+                      <p class="text-xl text-[#996600]">Alianzas Estratégicas</p>
                       <h2 class="text-4xl font-medium">Entidades que confían en nosotros</h2>
                       <div
                         class="container mx-auto mt-10 grid grid-cols-1 bg-white md:grid-cols-3 gap-1 px-20 justify-items-center"
