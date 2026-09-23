@@ -1,6 +1,7 @@
 import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { enableAnalytics } from '../../analytics';
 
 const CONSENT_KEY = 'cookie-consent';
 
@@ -24,6 +25,9 @@ export class CookieConsentComponent implements OnInit {
 
   accept(): void {
     this.setConsent('accepted');
+    if (isPlatformBrowser(this.platformId)) {
+      enableAnalytics();
+    }
   }
 
   reject(): void {
